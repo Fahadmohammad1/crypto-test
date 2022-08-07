@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <nav>
-      <Navbar bg="white" expand="lg" className="py-2">
+      <Navbar bg="white" expand="lg" className="p-3">
         <Container fluid>
           <Navbar.Brand href="#" className="fw-bold fs-3 text-success">
             Crypto
@@ -35,13 +35,15 @@ const Header = () => {
                           to="/"
                           className="text-decoration-none text-dark fw-bold"
                         >
-                          Login
+                          <Button variant="light" className="w-100">
+                            Login
+                          </Button>
                         </Link>
                         <Link
                           to="/"
                           className="text-decoration-none text-dark fw-bold"
                         >
-                          Sign Up
+                          <Button variant="light">Sign Up</Button>
                         </Link>
                       </Popover.Body>
                     </Popover>
