@@ -5,6 +5,9 @@ import Popover from "react-bootstrap/Popover";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
+import { FaEthereum } from "react-icons/fa";
+import { FaWallet } from "react-icons/fa";
+import Dropdown from "react-bootstrap/Dropdown";
 
 const Header = () => {
   return (
@@ -16,12 +19,25 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll" className="justify-content-end">
-            <Button variant="outline-dark" className="me-2">
-              Ethereum Kovan
+            <Dropdown className="me-2">
+              <Dropdown.Toggle
+                variant="outline-dark"
+                id="dropdown-basic"
+                className="text-muted"
+              >
+                {" "}
+                <FaEthereum /> Ethereum Kovan
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            <Button variant="outline-success" className="fw-bold me-2">
+              <FaWallet /> Connect Wallet
             </Button>
-            <button className="btn btn-outline-success fw-bold me-2">
-              Connect Wallet
-            </button>
             <>
               {["bottom"].map((placement) => (
                 <OverlayTrigger
@@ -51,7 +67,7 @@ const Header = () => {
                 >
                   <Button variant="secondary" className="rounded-circle">
                     <img
-                      style={{ width: "25px" }}
+                      style={{ width: "20px" }}
                       src="https://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png"
                       alt=""
                     />
